@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    .code-block {
+        background: #ffeded;
+        color: #333;
+        padding: 1rem;
+        border-radius: 6px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        transition: background-color 0.3s ease;
+        position: relative; /* Add this */
+        width: 100%;
+    }
+
+    .code-block.correct {
+        background: #efffed;
+    }
+
+    .metric-bar {
+        position: absolute; /* Changed to absolute */
+        right: 0;          /* Align to right */
+        top: 0;           /* Align to top */
+        bottom: 0;        /* Stretch to bottom */
+        width: 8px;
+        background: #e2e8f0;
+        overflow: hidden;
+    }
+
+    .metric-bar-fill {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #00b5ad;
+        transition: height 0.3s ease;
+    }
+
+    .example-wrapper {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    /* Add these new styles */
+    .column {
+        overflow: hidden; /* Prevent overflow */
+    }
+
+    .box {
+        overflow: visible; /* Allow box to contain all content */
+    }
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.is-active {
+        display: block;
+    }
+
+    .highlight-add {
+        background-color: #90EE90; /* Light green background */
+        color: #006400; /* Dark green text */
+        margin: -2px;
+        padding: 2px;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        border-left: 2px solid #006400;
+    }
+
+    .highlight-remove {
+        background-color: #FFB6C1; /* Light pink background */
+        color: #8b0000; /* Dark red text */
+        margin: -2px;
+        padding: 2px;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        border-left: 2px solid #8b0000;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 26px;
+    }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+        /* The slider */
+        .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+        input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+        input:checked + .slider:before {
+        -webkit-transform: translateX(24px);
+        -ms-transform: translateX(24px);
+        transform: translateX(24px);
+    }
+
+        /* Rounded sliders */
+        .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+        border-radius: 50%;
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title has-text-weight-bold">Small Models, Big Tasks</h1>
+            <h2 class="title is-4 publication-title has-text-weight-medium"> An Exploratory Empirical Study on Small Language Models for Function Calling</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=PnlwH5gAAAAJ&hl=en" target="_blank">Ishan Kavathekar</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=9BAAoZMAAAAJ&hl=en" target="_blank">Raghav Donakanti</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=MfzQyP8AAAAJ&hl=en" target="_blank">Ponnurangam Kumaraguru</a>,</span>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=qtITyHkAAAAJ&hl=en" target="_blank">Karthik Vaidhyanathan</a></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">IIIT-Hyderabad<br>EASE 2025</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2504.19277" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/Raghav010/Small-Models-Big-Tasks" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/slm_ex.mp4"
+        type="video/mp4">
+      </video>
+      <!-- <div class="has-text-centered">
+        <img src="static/images/slm_ex.gif" alt="Banner GIF" style="max-width: 100%; height: auto; object-fit: cover;">
+      </div> -->
+      <!-- <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2> -->
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Function calling is a complex task with widespread applications in domains such as information retrieval, software engineering and automation. For example, a query to <em>book the shortest flight from New York to London on January 15</em> requires identifying the correct parameters to generate accurate function calls. Large Language Models (LLMs) can automate this process but are computationally expensive and impractical in resource-constrained settings. In contrast, Small Language Models (SLMs) can operate efficiently, offering faster response times, lower computational demands, and enhanced privacy, making them potential candidates for function calling on edge devices. In this exploratory empirical study, we evaluate the efficacy of SLMs in generating function calls across diverse domains using zero-shot, few-shot, and fine-tuning approaches, both with and without prompt injection. Furthermore, we analyze the model responses across a range of metrics, capturing various aspects of function call generation. Additionally, we perform experiments on an edge device to evaluate their performance in terms of latency and memory usage, providing useful insights into their practical applicability. Our findings show that while SLMs improve from zero-shot to few-shot and perform best with fine-tuning, they struggle significantly with adhering to the given output format. Prompt injection experiments further indicate that the models are generally robust and exhibit only a slight decline in performance. While SLMs demonstrate potential for the function call generation task, our results also highlight areas that need further refinement for real-time functioning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<br>
+<br>
+
+<!-- Image and information cards -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Function Calling</h2>
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-two-fifths">
+          <!-- Your image h</div>ere -->
+          <figure class="image" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <img src="static/images/datapoint.png" alt="MY ALT TEXT">
+          </figure>
+          <!-- <figure class="image">
+            <img src="static/images/datapoint1.png" alt="MY ALT TEXT">
+          </figure> -->
+        </div>
+        <div class="column is-1"></div>
+        <div class="column">
+          <!-- Information cards -->
+          <article class="message is-dark">
+            <div class="message-header">
+              <p>Zero-shot Example</p>
+            </div>
+            <div class="message-body">
+              <p><strong>Instruction</strong>: System prompt and description of the function call generation task</p>
+              <p><strong>Description</strong>: Description of all the tools available to complete the user query</p> 
+              <p><strong>Format Instruction</strong>: Required structure and format for the generated output</p>
+              <p><strong>User Query</strong></p>
+            </div>
+          </article>
+          <article class="message is-dark">
+            <div class="message-header">
+              <p>Few-shot Example</p>
+            </div>
+            <div class="message-body">
+              <p><strong>Task Instruction</strong>: System prompt and description of function call generation task</p>
+              <p><strong>Tools Description</strong>: Description of all the tools available to complete the user query</p>
+              <p><strong>Format Instruction</strong>: Required structure and format for the generated output</p>
+              <p><strong>Sample Examples</strong>:Three query-response examples of the function call generation task</p>
+              <p>SAMPLE EXAMPLE 1</p>
+              <p>SAMPLE EXAMPLE 2</p>
+              <p>SAMPLE EXAMPLE 3</p>
+              <p><strong>User Query</strong></p>
+            </div>
+          </article>
+          <article class="message is-dark">
+            <div class="message-header">
+              <p>Prompt Injection Example</p>
+            </div>
+            <div class="message-body">
+              <p><strong>Task Instruction</strong>: System prompt and description of function call generation task</p>
+              <p><strong>Tools Description</strong>: Description of all the tools available to complete the user query</p>
+              <p><strong>Format Instruction</strong>: Required structure and format for the generated output</p>
+              <p><strong>User Query</strong> + l3aq - a" <: 11|E > 3vn8IsdeF$rnJQ&</p>
+            </div>
+           </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image and information cards -->
+
+
+<br>
+<br>
+
+<!-- Metrics section -->
+<section class="section">
+  <div class="container">
+      <h1 class="title is-3">LLM Function Calling Metrics</h1>
+      <p class="subtitle">Evaluating the hierarchical structure of function calls</p>
+
+      <div class="tabs is-centered is-fullwidth">
+          <ul>
+              <li class="is-active" data-tab="json">
+                  <a>JSON Parsability</a>
+              </li>
+              <li data-tab="task">
+                  <a>Task Accuracy & Correct Ratio</a>
+              </li>
+              <li data-tab="fsp">
+                  <a>FSP</a>
+              </li>
+              <li data-tab="acs">
+                  <a>ACS</a>
+              </li>
+              <li data-tab="avc">
+                  <a>AVC</a>
+              </li>
+          </ul>
+      </div>
+
+      <!-- JSON Parsability -->
+      <div id="json" class="tab-content is-active">
+          <div class="content">
+              <p class="is-size-5 mb-4">
+                  <strong>JSON Parsability</strong> measures whether the model's output follows valid JSON structure.
+                  This ensures the syntactic correctness of the output, which is essential for downstream processing.
+              </p>
+          </div>
+          <div class="box">
+              <div class="field">
+                  <label class="switch">
+                      <input id="json-toggle" type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+                  <label for="json-toggle" class="subtitle is-6">Incorrect / Correct</label>
+              </div>
+              <div class="columns mt-4 is-centered">
+                  <div class="column">
+                      <h4 class="title is-6">Example 1</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="json-example-1"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="json-bar-1"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="column">
+                      <h4 class="title is-6">Example 2</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="json-example-2"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="json-bar-2"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Function Selection Performance -->
+      <div id="fsp" class="tab-content">
+          <div class="content">
+              <p class="is-size-5 mb-4">
+                  <strong>Function Selection Performance (FSP)</strong> measures the model's ability to choose the correct functions from the available set.
+                  It focuses on whether the model correctly identifies which functions to call, regardless of the arguments.
+              </p>
+          </div>
+          <div class="box">
+              <div class="field">
+                  <label class="switch">
+                      <input id="fsp-toggle" type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+                  <label for="fsp-toggle" class="subtitle is-6">Incorrect / Correct</label>
+              </div>
+              <div class="columns mt-4">
+                  <div class="column">
+                      <h4 class="title is-6">Example 1</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="fsp-example-1"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="fsp-bar-1"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="column">
+                      <h4 class="title is-6">Example 2</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="fsp-example-2"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="fsp-bar-2"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Argument Completeness Score -->
+      <div id="acs" class="tab-content">
+          <div class="content">
+              <p class="is-size-5 mb-4">
+                  <strong>Argument Completeness Score (ACS)</strong> evaluates whether all required argument names are present in the function calls.
+                  This metric focuses on structural correctness of arguments, regardless of their values.
+              </p>
+          </div>
+          <div class="box">
+              <div class="field">
+                  <label class="switch">
+                      <input id="acs-toggle" type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+                  <label for="acs-toggle" class="subtitle is-6">Incorrect / Correct</label>
+              </div>
+              <div class="columns mt-4">
+                  <div class="column">
+                      <h4 class="title is-6">Example 1</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="acs-example-1"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="acs-bar-1"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="column">
+                      <h4 class="title is-6">Example 2</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="acs-example-2"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="acs-bar-2"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Argument Value Correctness -->
+      <div id="avc" class="tab-content">
+          <div class="content">
+              <p class="is-size-5 mb-4">
+                  <strong>Argument Value Correctness (AVC)</strong> measures whether the values assigned to arguments are correct.
+                  This metric evaluates the semantic accuracy of the function calls, assuming the argument names are correct.
+              </p>
+          </div>
+          <div class="box">
+              <div class="field">
+                  <label class="switch">
+                      <input id="avc-toggle" type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+                  <label for="avc-toggle" class="subtitle is-6">Incorrect / Correct</label>
+              </div>
+              <div class="columns mt-4">
+                  <div class="column">
+                      <h4 class="title is-6">Example 1</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="avc-example-1"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="avc-bar-1"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="column">
+                      <h4 class="title is-6">Example 2</h4>
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="avc-example-2"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="avc-bar-2"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Task Accuracy & Correct Ratio -->
+      <div id="task" class="tab-content">
+          <div class="content">
+              <p class="mb-4 is-size-5">
+                  <strong>Correct Ratio</strong> measures the proportion of outputs that are exactly correct, with no partial credit.
+                  An output is only considered correct if it matches the ground truth perfectly.
+              </p>
+          </div>
+          <div class="box mb-5">
+              <div class="field">
+                  <label class="switch">
+                      <input id="ratio-toggle" type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+                  <label for="ratio-toggle" class="subtitle is-6">Incorrect / Correct</label>
+              </div>
+              <div class="columns mt-4">
+                  <div class="column">
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="ratio-example-1"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="ratio-bar-1"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="column">
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="ratio-example-2"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="ratio-bar-2"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="content">
+              <p class="mb-4 is-size-5">
+                  <strong>Task Accuracy</strong> (F1-score) allows for partial credit, measuring how close the output is to being correct.
+                  This metric better captures incremental improvements in model performance.
+              </p>
+          </div>
+          <div class="box">
+              <div class="field">
+                  <label class="switch">
+                      <input id="accuracy-toggle" type="checkbox">
+                      <span class="slider"></span>
+                  </label>
+                  <label for="accuracy-toggle" class="subtitle is-6">Incorrect / Correct</label>
+              </div>
+              <div class="columns mt-4">
+                  <div class="column">
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="accuracy-example-1"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="accuracy-bar-1"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="column">
+                      <div class="example-wrapper">
+                          <pre class="code-block" id="accuracy-example-2"></pre>
+                          <div class="metric-bar">
+                              <div class="metric-bar-fill" id="accuracy-bar-2"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Other metric tabs will be similar to JSON tab -->
+  </div>
+</section>
+
+<br>
+<br>
+
+<script>
+  // Tab switching logic
+  document.querySelectorAll('.tabs li').forEach(tab => {
+      tab.addEventListener('click', () => {
+          // Update active tab
+          document.querySelectorAll('.tabs li').forEach(t => t.classList.remove('is-active'));
+          tab.classList.add('is-active');
+          
+          // Update active content
+          document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('is-active'));
+          document.getElementById(tab.dataset.tab).classList.add('is-active');
+      });
+  });
+
+  // Example data
+  const examples = {
+      json: {
+          example1: {
+              incorrect: `[BEGIN OF SOLUTION]
+              json
+"name": "setTemperature,
+"args": {
+  temperature: 72
+
+}`,
+              correct: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 72
+}
+}]`,
+              score: { incorrect: 0, correct: 1 }
+          },
+          example2: {
+              incorrect: `[[
+functions: [
+  { name: 'setLight' args: { brightness: 80 } } },
+  { name: 'setTemp' args: { temp: 72 }
+]
+}`,
+              correct: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "setTemperature", "args": { "temperature": 72 } }
+]`,
+              score: { incorrect: 0, correct: 1 }
+          }
+      },
+      ratio: {
+          example1: {
+              incorrect: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 72,
+  "mode": "cooling"
+}
+}]`,
+              correct: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 72
+}
+}]`,
+              score: { incorrect: 0, correct: 1 }
+          },
+          example2: {
+              incorrect: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "lockDoor", "args": { "room": "Kid's room" } }
+]`,
+              correct: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "lockDoor", "args": { "room": "Living" } },
+  { "name": "setTemperature", "args": { "temperature": 72 } }
+]`,
+              score: { incorrect: 0, correct: 1 }
+          }
+      },
+      accuracy: {
+          example1: {
+              incorrect: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 72,
+  "mode": "cooling"
+}
+}]`,
+              correct: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 72
+}
+}]`,
+              score: { incorrect: 0, correct: 1 }
+          },
+          example2: {
+              incorrect: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "lockDoor", "args": { "room": "Kid's room" } } 
+]`,
+              correct: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "lockDoor", "args": { "room": "Living" } },
+  { "name": "setTemperature", "args": { "temperature": 72 } }
+]`,
+              score: { incorrect: 0.4, correct: 1 }
+          }
+      },
+      fsp: {
+      example1: {
+          incorrect: `[{
+"name": "checkTemp"
+}]`,
+          correct: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 72
+}
+}]`,
+          score: { incorrect: 0, correct: 1 }
+      },
+      example2: {
+          incorrect: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "checkTemp"}
+]`,
+          correct: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "setTemperature", "args": { "temperature": 72 } }
+]`,
+          score: { incorrect: 0.5, correct: 1 }
+      }
+  },
+  acs: {
+      example1: {
+          incorrect: `[{
+"name": "setTemperature",
+"args": {
+  "temp": 72,
+  "unit": "F"
+}
+}]`,
+          correct: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 81,
+  "unit": "F"
+}
+}]`,
+          score: { incorrect: 0.5, correct: 1 }
+      },
+      example2: {
+          incorrect: `[
+  { "name": "setLight", "args": { "bright": 80 } },
+  { "name": "setTemperature", "args": { "temp": 72 } }
+]`,
+          correct: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "setTemperature", "args": { "temperature": 72 } }
+]`,
+          score: { incorrect: 0, correct: 1 }
+      }
+  },
+  avc: {
+      example1: {
+          incorrect: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": "seventy-two"
+}
+}]`,
+          correct: `[{
+"name": "setTemperature",
+"args": {
+  "temperature": 72
+}
+}]`,
+          score: { incorrect: 0, correct: 1 }
+      },
+      example2: {
+          incorrect: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "setTemperature",
+   "args": {"temperature": "warm","unit": "F"} 
+  }
+]`,
+          correct: `[
+  { "name": "setLight", "args": { "brightness": 80 } },
+  { "name": "setTemperature",
+   "args": {"temperature": 72,"unit": "F"} 
+  }
+]`,
+          score: { incorrect: 0.5, correct: 1 }
+      }
+  }
+};
+
+  // Toggle handlers
+  function setupToggle(toggleId, example1Id, example2Id, bar1Id, bar2Id, data) {
+      const toggle = document.getElementById(toggleId);
+      if (!toggle) return;
+
+      // function updateExample() {
+      //     const isCorrect = toggle.checked;
+      //     const example1 = document.getElementById(example1Id);
+      //     const example2 = document.getElementById(example2Id);
+      //     const bar1 = document.getElementById(bar1Id);
+      //     const bar2 = document.getElementById(bar2Id);
+
+      //     example1.textContent = isCorrect ? data.example1.correct : data.example1.incorrect;
+      //     example2.textContent = isCorrect ? data.example2.correct : data.example2.incorrect;
+          
+      //     const score1 = isCorrect ? data.example1.score.correct : data.example1.score.incorrect;
+      //     const score2 = isCorrect ? data.example2.score.correct : data.example2.score.incorrect;
+          
+      //     bar1.style.height = `${score1 * 100}%`;
+      //     bar2.style.height = `${score2 * 100}%`;
+
+      //     // Add or remove correct class for color change
+      //     example1.classList.toggle('correct', isCorrect);
+      //     example2.classList.toggle('correct', isCorrect);
+      // }
+
+      function updateExample() {
+          const isCorrect = toggle.checked;
+          const example1 = document.getElementById(example1Id);
+          const example2 = document.getElementById(example2Id);
+          const bar1 = document.getElementById(bar1Id);
+          const bar2 = document.getElementById(bar2Id);
+
+          // Helper function to highlight differences
+          function highlightDifferences(incorrect, correct) {
+              const lines1 = incorrect.split('\n');
+              const lines2 = correct.split('\n');
+              let result = '';
+              
+              for (let i = 0; i < Math.max(lines1.length, lines2.length); i++) {
+                  const line1 = lines1[i] || '';
+                  const line2 = lines2[i] || '';
+                  
+                  if (line1 !== line2) {
+                      if (isCorrect) {
+                          result += `<span class="highlight-add">${line2}</span>\n`;
+                      } else {
+                          result += `<span class="highlight-remove">${line1}</span>\n`;
+                      }
+                  } else {
+                      result += line1 + '\n';
+                  }
+              }
+              return result.trim();
+          }
+
+          // Update content with highlights
+          example1.innerHTML = highlightDifferences(data.example1.incorrect, data.example1.correct);
+          example2.innerHTML = highlightDifferences(data.example2.incorrect, data.example2.correct);
+          
+          const score1 = isCorrect ? data.example1.score.correct : data.example1.score.incorrect;
+          const score2 = isCorrect ? data.example2.score.correct : data.example2.score.incorrect;
+          
+          bar1.style.height = `${score1 * 100}%`;
+          bar2.style.height = `${score2 * 100}%`;
+
+          // Add or remove correct class for color change
+          example1.classList.toggle('correct', isCorrect);
+          example2.classList.toggle('correct', isCorrect);
+      }
+
+      toggle.addEventListener('change', updateExample);
+      updateExample(); // Initialize
+  }
+
+  // Setup toggles for each metric
+  setupToggle('json-toggle', 'json-example-1', 'json-example-2', 'json-bar-1', 'json-bar-2', examples.json);
+  setupToggle('ratio-toggle', 'ratio-example-1', 'ratio-example-2', 'ratio-bar-1', 'ratio-bar-2', examples.ratio);
+  setupToggle('accuracy-toggle', 'accuracy-example-1', 'accuracy-example-2', 'accuracy-bar-1', 'accuracy-bar-2', examples.accuracy);
+  setupToggle('fsp-toggle', 'fsp-example-1', 'fsp-example-2', 'fsp-bar-1', 'fsp-bar-2', examples.fsp);
+  setupToggle('acs-toggle', 'acs-example-1', 'acs-example-2', 'acs-bar-1', 'acs-bar-2', examples.acs);
+  setupToggle('avc-toggle', 'avc-example-1', 'avc-example-2', 'avc-bar-1', 'avc-bar-2', examples.avc);
+</script>
+<!-- Metrics section -->
+
+
+<!-- Findings Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Findings</h2>
+      <p class="subtitle">Model performance across different metrics and configurations, with and without prompt injection.</p>
+      <style>
+        .metric-group-start td, .metric-group-start th {
+          border-top: 3px solid #888; /* Darker and thicker top border */
+        }
+        .table th.metric-header {
+          background-color: #f0f0f0;
+          font-weight: 600;
+        }
+        .table th.main-col-header {
+          background-color: #e0e0e0;
+        }
+        .table td.performance-zero {
+          color: #ababab;
+        }
+        .table td {
+            transition: background-color 0.3s ease;
+        }
+      </style>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="performanceTable">
+          <thead>
+            <tr>
+              <th rowspan="2" class="has-text-centered is-vcentered metric-header">Metric</th>
+              <th rowspan="2" class="is-vcentered metric-header">Model</th>
+              <th colspan="2" class="has-text-centered main-col-header">Zero-shot</th>
+              <th colspan="2" class="has-text-centered main-col-header">Few-shot</th>
+              <th colspan="2" class="has-text-centered main-col-header">Finetuned</th>
+            </tr>
+            <tr>
+              <th class="has-text-centered has-text-weight-semibold">Without Prompt-injection</th>
+              <th class="has-text-centered has-text-weight-semibold">With Prompt-injection</th>
+              <th class="has-text-centered has-text-weight-semibold">Without Prompt-injection</th>
+              <th class="has-text-centered has-text-weight-semibold">With Prompt-injection</th>
+              <th class="has-text-centered has-text-weight-semibold">Without Prompt-injection</th>
+              <th class="has-text-centered has-text-weight-semibold">With Prompt-injection</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JSON Parsibility -->
+            <tr class="metric-group-start" data-metric-name="JSON Parsibility">
+              <td rowspan="5" class="has-text-centered is-vcentered metric-header" style="color: hsl(200, 70%, 40%)">JSON Parsibility</td>
+              <td>Deepseek-coder-1.3B-instruct</td>
+              <td class="has-text-centered"><strong>0.0734</strong></td>
+              <td class="has-text-centered"><strong>0.0140</strong></td>
+              <td class="has-text-centered"><strong>0.8938</strong></td>
+              <td class="has-text-centered"><strong>0.7268</strong></td>
+              <td class="has-text-centered">0.9944</td>
+              <td class="has-text-centered">0.9906</td>
+            </tr>
+            <tr data-metric-name="JSON Parsibility">
+              <td>Phi-3-mini-4k-instruct</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0084</td>
+              <td class="has-text-centered">0.9962</td>
+              <td class="has-text-centered"><strong>0.9939</strong></td>
+            </tr>
+            <tr data-metric-name="JSON Parsibility">
+              <td>Phi-2</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0002</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="JSON Parsibility">
+              <td>Starcoder2-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="JSON Parsibility">
+              <td>Stable-code-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0058</td>
+              <td class="has-text-centered">0.0060</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+
+            <!-- Task Accuracy -->
+            <tr class="metric-group-start" data-metric-name="Task Accuracy">
+              <td rowspan="5" class="has-text-centered is-vcentered metric-header" style="color: hsl(120, 60%, 40%)">Task Accuracy</td>
+              <td>Deepseek-coder-1.3B-instruct</td>
+              <td class="has-text-centered"><strong>0.0111</strong></td>
+              <td class="has-text-centered"><strong>0.0527</strong></td>
+              <td class="has-text-centered"><strong>0.5565</strong></td>
+              <td class="has-text-centered"><strong>0.4289</strong></td>
+              <td class="has-text-centered">0.8543</td>
+              <td class="has-text-centered">0.8404</td>
+            </tr>
+            <tr data-metric-name="Task Accuracy">
+              <td>Phi-3-mini-4k-instruct</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0012</td>
+              <td class="has-text-centered"><strong>0.8727</strong></td>
+              <td class="has-text-centered"><strong>0.8598</strong></td>
+            </tr>
+            <tr data-metric-name="Task Accuracy">
+              <td>Phi-2</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="Task Accuracy">
+              <td>Starcoder2-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="Task Accuracy">
+              <td>Stable-code-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0011</td>
+              <td class="has-text-centered">0.0009</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+
+            <!-- Correct Ratio -->
+            <tr class="metric-group-start" data-metric-name="Correct Ratio">
+              <td rowspan="5" class="has-text-centered is-vcentered metric-header" style="color: hsl(45, 75%, 40%)">Correct Ratio</td>
+              <td>Deepseek-coder-1.3B-instruct</td>
+              <td class="has-text-centered"><strong>0.0470</strong></td>
+              <td class="has-text-centered"><strong>0.0098</strong></td>
+              <td class="has-text-centered"><strong>0.4680</strong></td>
+              <td class="has-text-centered"><strong>0.3384</strong></td>
+              <td class="has-text-centered">0.8074</td>
+              <td class="has-text-centered">0.7866</td>
+            </tr>
+            <tr data-metric-name="Correct Ratio">
+              <td>Phi-3-mini-4k-instruct</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0010</td>
+              <td class="has-text-centered">0.0008</td>
+              <td class="has-text-centered"><strong>0.8328</strong></td>
+              <td class="has-text-centered"><strong>0.8210</strong></td>
+            </tr>
+            <tr data-metric-name="Correct Ratio">
+              <td>Phi-2</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="Correct Ratio">
+              <td>Starcoder2-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="Correct Ratio">
+              <td>Stable-code-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0010</td>
+              <td class="has-text-centered">0.0006</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+
+            <!-- FSP -->
+            <tr class="metric-group-start" data-metric-name="FSP">
+              <td rowspan="5" class="has-text-centered is-vcentered metric-header" style="color: hsl(280, 60%, 40%)">FSP</td>
+              <td>Deepseek-coder-1.3B-instruct</td>
+              <td class="has-text-centered"><strong>0.0139</strong></td>
+              <td class="has-text-centered"><strong>0.0723</strong></td>
+              <td class="has-text-centered"><strong>0.8846</strong></td>
+              <td class="has-text-centered"><strong>0.7209</strong></td>
+              <td class="has-text-centered">0.9918</td>
+              <td class="has-text-centered">0.9859</td>
+            </tr>
+            <tr data-metric-name="FSP">
+              <td>Phi-3-mini-4k-instruct</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0031</td>
+              <td class="has-text-centered"><strong>0.9936</strong></td>
+              <td class="has-text-centered"><strong>0.9901</strong></td>
+            </tr>
+            <tr data-metric-name="FSP">
+              <td>Phi-2</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="FSP">
+              <td>Starcoder2-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="FSP">
+              <td>Stable-code-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0017</td>
+              <td class="has-text-centered">0.0016</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+
+            <!-- ACS -->
+            <tr class="metric-group-start" data-metric-name="ACS">
+              <td rowspan="5" class="has-text-centered is-vcentered metric-header" style="color:hsl(0, 70%, 40%)">ACS</td>
+              <td>Deepseek-coder-1.3B-instruct</td>
+              <td class="has-text-centered"><strong>0.0699</strong></td>
+              <td class="has-text-centered"><strong>0.0136</strong></td>
+              <td class="has-text-centered"><strong>0.8404</strong></td>
+              <td class="has-text-centered"><strong>0.6783</strong></td>
+              <td class="has-text-centered">0.9664</td>
+              <td class="has-text-centered">0.9596</td>
+            </tr>
+            <tr data-metric-name="ACS">
+              <td>Phi-3-mini-4k-instruct</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0031</td>
+              <td class="has-text-centered"><strong>0.9700</strong></td>
+              <td class="has-text-centered"><strong>0.9652</strong></td>
+            </tr>
+            <tr data-metric-name="ACS">
+              <td>Phi-2</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="ACS">
+              <td>Starcoder2-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="ACS">
+              <td>Stable-code-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0017</td>
+              <td class="has-text-centered">0.0016</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+
+            <!-- AVC -->
+            <tr class="metric-group-start" data-metric-name="AVC">
+              <td rowspan="5" class="has-text-centered is-vcentered metric-header" style="color:hsl(30, 75%, 40%)">AVC</td>
+              <td>Deepseek-coder-1.3B-instruct</td>
+              <td class="has-text-centered"><strong>0.0129</strong></td>
+              <td class="has-text-centered"><strong>0.0614</strong></td>
+              <td class="has-text-centered"><strong>0.6811</strong></td>
+              <td class="has-text-centered"><strong>0.5488</strong></td>
+              <td class="has-text-centered">0.9065</td>
+              <td class="has-text-centered">0.8973</td>
+            </tr>
+            <tr data-metric-name="AVC">
+              <td>Phi-3-mini-4k-instruct</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0015</td>
+              <td class="has-text-centered"><strong>0.9172</strong></td>
+              <td class="has-text-centered"><strong>0.9087</strong></td>
+            </tr>
+            <tr data-metric-name="AVC">
+              <td>Phi-2</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="AVC">
+              <td>Starcoder2-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+            <tr data-metric-name="AVC">
+              <td>Stable-code-3B</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered">0.0012</td>
+              <td class="has-text-centered">0.0010</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+              <td class="has-text-centered performance-zero">0.0000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content is-size-7 mt-4">
+        <p>
+          <strong>Note:</strong>
+          <span class="has-text-weight-bold">Bold values</span> indicate the best performing model in that specific experiment configuration for a given metric.
+        </p>
+        <p>
+            Metric Colors:
+            <span style="background-color: hsl(200, 70%, 60%); color: white; padding: 1px 3px; border-radius: 3px;">JSON Parsibility (Blue)</span>,
+            <span style="background-color: hsl(120, 60%, 60%); color: white; padding: 1px 3px; border-radius: 3px;">Task Accuracy (Green)</span>,
+            <span style="background-color: hsl(45, 75%, 60%); color: #333; padding: 1px 3px; border-radius: 3px;">Correct Ratio (Yellow)</span>,
+            <span style="background-color: hsl(280, 60%, 65%); color: white; padding: 1px 3px; border-radius: 3px;">FSP (Purple)</span>,
+            <span style="background-color: hsl(0, 70%, 65%); color: white; padding: 1px 3px; border-radius: 3px;">ACS (Red)</span>,
+            <span style="background-color: hsl(30, 75%, 60%); color: white; padding: 1px 3px; border-radius: 3px;">AVC (Orange)</span>.
+        </p>
+      </div>
+      <div class="content mt-5"> <!-- Added mt-5 for spacing -->
+        <h4 class="title is-4">Discussion of Findings</h4>
+        <ul class="discussion-points">
+          <li>
+            SLMs generally struggle to generate accurate function calls in a <strong>zero-shot setting</strong>. Most models fail to adhere to the required output format, leading to unparsable and incorrect responses. Deepseek-Coder stands out as the only model producing some JSON parsable responses, though these are very limited. Prompt injection experiments show a slight performance decline, but the impact is minimal due to the already low baseline performance.
+          </li>
+          <li>
+            A significant performance improvement is observed in the <strong>few-shot setting</strong>. However, several models do not show substantial gains even with provided examples. In this setting, prompt injection leads to a more notable decline in model performance.
+          </li>
+          <li>
+            <strong>Finetuned models</strong> demonstrate considerably better performance compared to both zero-shot and few-shot approaches. These models are more capable of accurately selecting function parameters, resulting in higher task accuracy and correct ratios. Notably, prompt injection has a relatively minor effect on the performance of finetuned models.
+          </li>
+        </ul>
+        <hr> <!-- Optional: adds a horizontal rule for separation -->
+        <p class="has-text-centered is-size-6">
+          For a more comprehensive analysis, detailed experimental setup, and discussion of future directions, please refer to our
+          <a href="https://arxiv.org/pdf/2504.19277" target="_blank" class="has-text-link has-text-weight-semibold">
+            full paper
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Findings Section -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const table = document.getElementById('performanceTable');
+    if (!table) return;
+
+    const metricHues = {
+        "JSON Parsibility": 200, // Blue
+        "Task Accuracy": 120,    // Green
+        "Correct Ratio": 45,     // Yellow/Gold
+        "FSP": 280,              // Purple
+        "ACS": 1,                // Red
+        "AVC": 30                // Orange
+    };
+
+    // Saturation: Can be fixed or slightly varied
+    const SATURATION = 70; // Fixed saturation for simplicity and consistency
+
+    // Lightness: from lighter (low values) to darker (high values)
+    const MIN_LIGHTNESS = 95; // For low values (closer to 0, but not 0) - very light
+    const MAX_LIGHTNESS_TARGET = 70; // For high values (closer to 1) - darker
+
+    let currentMetricName = "";
+
+    const rows = table.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        // Update currentMetricName if this row starts a new metric group
+        if (row.classList.contains('metric-group-start') || row.dataset.metricName) {
+            currentMetricName = row.dataset.metricName || 
+                                row.querySelector('.metric-header')?.textContent.trim() || 
+                                currentMetricName; // Fallback
+        }
+        if (!currentMetricName || !metricHues[currentMetricName]) return; // Skip if no valid metric
+
+        const baseHue = metricHues[currentMetricName];
+
+        const cells = row.querySelectorAll('td');
+        cells.forEach((cell, cellIndex) => {
+            if (cellIndex === 0 || cell.hasAttribute('rowspan')) { // Skip model name or metric name cell
+                return;
+            }
+
+            const textContent = cell.textContent.replace(/<[^>]*>/g, '').trim();
+            const value = parseFloat(textContent);
+
+            if (!isNaN(value) && value > 0 && value <= 1) {
+                const normalizedValue = value;
+
+                // Interpolate lightness: decreases with value
+                const lightness = MIN_LIGHTNESS - (normalizedValue * (MIN_LIGHTNESS - MAX_LIGHTNESS_TARGET));
+
+                cell.style.backgroundColor = `hsl(${baseHue}, ${SATURATION}%, ${lightness}%)`;
+
+                // Adjust text color for better contrast
+                // This threshold might need adjustment based on your chosen HSL values and hues
+                if (lightness < 60) {
+                    const strongTag = cell.querySelector('strong');
+                    if (strongTag) {
+                        strongTag.style.color = '#ffffff';
+                    } else {
+                        cell.style.color = '#ffffff';
+                    }
+                } else { // Lighter backgrounds generally need dark text
+                    // Special case for very light yellows where black text is better
+                     if (baseHue >= 40 && baseHue <= 60 && lightness > 70) { // Light yellows
+                        const strongTag = cell.querySelector('strong');
+                        if (strongTag) {
+                            strongTag.style.color = '#333333';
+                        } else {
+                            cell.style.color = '#333333';
+                        }
+                    } else {
+                        const strongTag = cell.querySelector('strong');
+                        if (strongTag) {
+                            strongTag.style.color = '#363636';
+                        } else {
+                           cell.style.color = '#363636';
+                        }
+                    }
+                }
+
+            } else if (textContent === "0.0000") {
+                cell.classList.add('performance-zero');
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
