@@ -247,11 +247,27 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <video poster="static/images/banner_img.png" id="tree" muted playsinline loop style="width: 100%; height: auto; max-height: 800px;">
         <!-- Your video here -->
         <source src="static/videos/slm_ex.mp4"
         type="video/mp4">
       </video>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const video = document.getElementById('tree');
+          
+          // Ensure video metadata is loaded first
+          video.addEventListener('loadedmetadata', function() {
+            // Show poster for 4 seconds, then autoplay
+            setTimeout(() => {
+              video.play().catch(error => {
+                console.log('Autoplay failed:', error);
+                // Fallback: video will show poster until user clicks
+              });
+            }, 4000);
+          });
+        });
+      </script>
       <!-- <div class="has-text-centered">
         <img src="static/images/slm_ex.gif" alt="Banner GIF" style="max-width: 100%; height: auto; object-fit: cover;">
       </div> -->
